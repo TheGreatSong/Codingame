@@ -18,19 +18,19 @@ int main()
         scanf("%d%d", &LAND_X, &LAND_Y);
 
         
-    }//¿©±â´Â ÁÂÇ¥ÀÔ´Ï´Ù. 
+    }//ì—¬ê¸°ëŠ” ì¢Œí‘œì…ë‹ˆë‹¤. 
 
     // game loop
     while (1) {
         int X;
         int Y;
-        int HS; //¼öÆò¼Óµµ. À½¼ö °¡´É ´ÜÀ§´Â m/s
-        int VS; // ¼öÁ÷ ¼Óµµ, can be negative.
-        int F; // ¿¬·áÀÇ ¾ç.
-        int R; // ¿ìÁÖ¼±ÀÇ °¢µµ¸¦ Á¶ÀıÇÔ. ÀÌ°É·Î xÃà ¹æÇâÀ» °áÁ¤ (-90 to 90).
-        int P; // ·ÎÄÏ ºĞ»ç ¼Óµµ.  (0 to 4).
+        int HS; //ìˆ˜í‰ì†ë„. ìŒìˆ˜ ê°€ëŠ¥ ë‹¨ìœ„ëŠ” m/s
+        int VS; // ìˆ˜ì§ ì†ë„, can be negative.
+        int F; // ì—°ë£Œì˜ ì–‘.
+        int R; // ìš°ì£¼ì„ ì˜ ê°ë„ë¥¼ ì¡°ì ˆí•¨. ì´ê±¸ë¡œ xì¶• ë°©í–¥ì„ ê²°ì • (-90 to 90).
+        int P; // ë¡œì¼“ ë¶„ì‚¬ ì†ë„.  (0 to 4).
         scanf("%d%d%d%d%d%d%d", &X, &Y, &HS, &VS, &F, &R, &P);
-        //printf("%d %d\n",R,P); // ·ÎÄÏÀÇ Á¶Á¤Àº R°ú P·Î¸¸ ÇÔ.
+        //printf("%d %d\n",R,P); // ë¡œì¼“ì˜ ì¡°ì •ì€ Rê³¼ Pë¡œë§Œ í•¨.
         // Write an action using printf(). DON'T FORGET THE TRAILING \n
         // To debug: fprintf(stderr, "Debug messages...\n");
         
@@ -50,3 +50,41 @@ int main()
 
     }
 }
+
+/************Original Code*********************************************************
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **
+int main()
+{
+    int N; // the number of points used to draw the surface of Mars.
+    scanf("%d", &N);
+    for (int i = 0; i < N; i++) {
+        int LAND_X; // X coordinate of a surface point. (0 to 6999)
+        int LAND_Y; // Y coordinate of a surface point. By linking all the points together in a sequential fashion, you form the surface of Mars.
+        scanf("%d%d", &LAND_X, &LAND_Y);
+    }
+
+    // game loop
+    while (1) {
+        int X;
+        int Y;
+        int HS; // the horizontal speed (in m/s), can be negative.
+        int VS; // the vertical speed (in m/s), can be negative.
+        int F; // the quantity of remaining fuel in liters.
+        int R; // the rotation angle in degrees (-90 to 90).
+        int P; // the thrust power (0 to 4).
+        scanf("%d%d%d%d%d%d%d", &X, &Y, &HS, &VS, &F, &R, &P);
+
+        // Write an action using printf(). DON'T FORGET THE TRAILING \n
+        // To debug: fprintf(stderr, "Debug messages...\n");
+
+        printf("-20 3\n"); // R P. R is the desired rotation angle. P is the desired thrust power.
+    }
+}
+************************************************************************************/

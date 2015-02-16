@@ -25,35 +25,60 @@ int main()
         
         // Write an action using printf(). DON'T FORGET THE TRAILING \n
         // To debug: fprintf(stderr, "Debug messages...\n");
-        //MAX ¼Óµµ¸¦ Á¤ÇØ¾ß µÊ.
-        fprintf(stderr, "¼Óµµ : %d\n",S);
-        fprintf(stderr, "³²Àº°Å¸® : %d\n",R-X-1);
-        fprintf(stderr, "À§Ä¡ : %d\n",X);
-        fprintf(stderr, "°£°Ý : %d\n",G);
-        fprintf(stderr, "Âø·ú : %d\n",L);
+        //MAX ì†ë„ë¥¼ ì •í•´ì•¼ ë¨.
+
         
         if((R-X-1)>0 && S-1<G){
             printf("SPEED\n");
-            fprintf(stderr, "°¡¼Ó º´½Å¾Æ\n");
         }
         else if((R-X-1)>0 && S-1>G){
             printf("SLOW\n");
-            fprintf(stderr, "°¨¼Ó º´½Å¾Æ\n");
         }
         else if((R-X-1)>0 && S-1==G){
             printf("WAIT\n");
-            fprintf(stderr, "µî¼Ó º´½Å¾Æ\n");
         }
         else if((R-X-1)==0){
             printf("JUMP\n");
-            fprintf(stderr, "Á¡ÇÁ º´½Å¾Æ\n");
-        }
+       }
         else if(R-X-1<0){
             printf("SLOW\n");
-            fprintf(stderr, "°¨¼Ó º´½Å¾Æ\n");
         }
             
             
         
     }
 }
+/****************Original Code***************************************************
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **
+int main()
+{
+    int R; // the length of the road before the gap.
+    scanf("%d", &R);
+    int G; // the length of the gap.
+    scanf("%d", &G);
+    int L; // the length of the landing platform.
+    scanf("%d", &L);
+
+    // game loop
+    while (1) {
+        int S; // the motorbike's speed.
+        scanf("%d", &S);
+        int X; // the position on the road of the motorbike.
+        scanf("%d", &X);
+
+        // Write an action using printf(). DON'T FORGET THE TRAILING \n
+        // To debug: fprintf(stderr, "Debug messages...\n");
+
+        printf("SPEED\n"); // A single line containing one of 4 keywords: SPEED, SLOW, JUMP, WAIT.
+    }
+}
+*********************************************************************************/
+
+

@@ -11,7 +11,7 @@ int main()
     int N; // the total number of nodes in the level, including the gateways
     int L; // the number of links
     int E; // the number of exit gateways
-    int key;//°ÔÀÌÆ®¿şÀÌ 1¹ø°ú ¿¬°áµÇ´Â Ã¹¹øÂ° ³ëµå ¹øÈ£
+    int key;//ê²Œì´íŠ¸ì›¨ì´ 1ë²ˆê³¼ ì—°ê²°ë˜ëŠ” ì²«ë²ˆì§¸ ë…¸ë“œ ë²ˆí˜¸
     int matrix[38][38];
     int gate[3];
     
@@ -22,10 +22,10 @@ int main()
         int N2;
         scanf("%d%d", &N1, &N2);
         matrix[N1][N2]=1;
-        matrix[N2][N1]=1;//Çà·Ä¿¡´Ù°¡ node °£ÀÇ ¿¬°áÀ» ÀÔ·Â 1 = ¿¬°á, 0 = ´ÜÀı
+        matrix[N2][N1]=1;//í–‰ë ¬ì—ë‹¤ê°€ node ê°„ì˜ ì—°ê²°ì„ ì…ë ¥ 1 = ì—°ê²°, 0 = ë‹¨ì ˆ
     }
     
-//    fprintf(stderr, "Çà·Ä Å×½ºÆ® : %d\n",matrix[29][30]);
+//    fprintf(stderr, "í–‰ë ¬ í…ŒìŠ¤íŠ¸ : %d\n",matrix[29][30]);
     for (int i = 0; i < E; i++) {
         
         int EI; // the index of a gateway node
@@ -44,16 +44,16 @@ int main()
 
     // game loop
     while (1) {
-        int SI; //½ºÄ«ÀÌ³İÀÌ ÀÖ´Â ³ëµå´Â ¸ÅÅÏ¸¶´Ù ÀÎ½ÄµÊ.
+        int SI; //ìŠ¤ì¹´ì´ë„·ì´ ìˆëŠ” ë…¸ë“œëŠ” ë§¤í„´ë§ˆë‹¤ ì¸ì‹ë¨.
 
         
         scanf("%d", &SI);
-        fprintf(stderr, "SkynetÀÌ ÀÖ´Â node : %d\n",SI);
+        fprintf(stderr, "Skynetì´ ìˆëŠ” node : %d\n",SI);
         // Write an action using printf(). DON'T FORGET THE TRAILING \n
         // To debug: fprintf(stderr, "Debug messages...\n");
         fprintf(stderr,"gate0 : %d gate1 : %d gate2 : %d\n ",gate[0],gate[1],gate[2]);
-        //½ºÄ«ÀÌ³İÀÌ ÀÖ´Â ³ëµå°¡ ³ª¶û ¿¬°áµÈ ³ëµåÀÎÁö ÆÇ´ÜÀ» ÇØ¾ßÇÔ.
-        //ÇØ´ç ÅÏ¿¡ node ÇÏ³ª ¹«Á¶°Ç ²÷¾î¾ß µÊ.
+        //ìŠ¤ì¹´ì´ë„·ì´ ìˆëŠ” ë…¸ë“œê°€ ë‚˜ë‘ ì—°ê²°ëœ ë…¸ë“œì¸ì§€ íŒë‹¨ì„ í•´ì•¼í•¨.
+        //í•´ë‹¹ í„´ì— node í•˜ë‚˜ ë¬´ì¡°ê±´ ëŠì–´ì•¼ ë¨.
        
         if(matrix[gate[0]][SI]==1){
             printf("%d %d\n",gate[0],SI);
@@ -71,6 +71,44 @@ int main()
         
     
         
-        //¼ø¼­´Â ÀÇ¹Ì ¾øÀ½.
+        //ìˆœì„œëŠ” ì˜ë¯¸ ì—†ìŒ.
     }
 }
+
+/****************Original Code***************************************
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **
+int main()
+{
+    int N; // the total number of nodes in the level, including the gateways
+    int L; // the number of links
+    int E; // the number of exit gateways
+    scanf("%d%d%d", &N, &L, &E);
+    for (int i = 0; i < L; i++) {
+        int N1; // N1 and N2 defines a link between these nodes
+        int N2;
+        scanf("%d%d", &N1, &N2);
+    }
+    for (int i = 0; i < E; i++) {
+        int EI; // the index of a gateway node
+        scanf("%d", &EI);
+    }
+
+    // game loop
+    while (1) {
+        int SI; // The index of the node on which the Skynet agent is positioned this turn
+        scanf("%d", &SI);
+
+        // Write an action using printf(). DON'T FORGET THE TRAILING \n
+        // To debug: fprintf(stderr, "Debug messages...\n");
+
+        printf("0 1\n"); // Example: 0 1 are the indices of the nodes you wish to sever the link between
+    }
+}
+***********************************************************************/

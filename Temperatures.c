@@ -12,11 +12,11 @@ int main()
     int N; // the number of temperatures to analyse
     scanf("%d", &N); fgetc(stdin);
     
-    int num;//¹®ÀÚ¿­ Ä«¿îÆ® º¯¼ö
-    int real;//¹®ÀÚ¿­¿¡¼­ ¼ıÀÚ ¾Ë¾Æ³»±â
+    int num;//ë¬¸ìì—´ ì¹´ìš´íŠ¸ ë³€ìˆ˜
+    int real;//ë¬¸ìì—´ì—ì„œ ìˆ«ì ì•Œì•„ë‚´ê¸°
     int result=0;
-    int mark=1;//¼ıÀÚÀÇ ºÎÈ£ °áÁ¤, 1·Î ÃÊ±âÈ­
-    int array[10];//¼ıÀÚ¸¦ ÀúÀåÇÒ ¹è¿­
+    int mark=1;//ìˆ«ìì˜ ë¶€í˜¸ ê²°ì •, 1ë¡œ ì´ˆê¸°í™”
+    int array[10];//ìˆ«ìë¥¼ ì €ì¥í•  ë°°ì—´
     int arraynum1=0;
 
     
@@ -26,30 +26,30 @@ int main()
     // Write an action using printf(). DON'T FORGET THE TRAILING \n
     // To debug: fprintf(stderr, "Debug messages...\n");
     while(TEMPS[num] != NULL){
-        //¹è¿­ÀÇ ¼ö 0~9
-        if(TEMPS[num] == 45){//ºÎÈ£¸¦ Á¤ÇÏÀÚ.
+        //ë°°ì—´ì˜ ìˆ˜ 0~9
+        if(TEMPS[num] == 45){//ë¶€í˜¸ë¥¼ ì •í•˜ì.
             mark = -1;
         }
         
     //fprintf(stderr, "%c\n",TEMPS[num]);
-        if( TEMPS[num]!=45 && TEMPS[num]!=32){//¼ıÀÚ »Ì¾Æ³»±â
+        if( TEMPS[num]!=45 && TEMPS[num]!=32){//ìˆ«ì ë½‘ì•„ë‚´ê¸°
             result = TEMPS[num]-48;
             
-            if(TEMPS[num+1]!=45 && TEMPS[num+1]!=32 && TEMPS[num+1] != 10 && TEMPS[num+1] != 0){//µÎÀÚ¸® ¼ö
+            if(TEMPS[num+1]!=45 && TEMPS[num+1]!=32 && TEMPS[num+1] != 10 && TEMPS[num+1] != 0){//ë‘ìë¦¬ ìˆ˜
                 real = mark * ((TEMPS[num]-48)*10 + (TEMPS[num+1]-48));
                 fprintf(stderr, "real : %d\n",real);
-                fprintf(stderr, "¾Æ½ºÅ° : %d,%d\n",TEMPS[num],TEMPS[num+1]);
+                fprintf(stderr, "ì•„ìŠ¤í‚¤ : %d,%d\n",TEMPS[num],TEMPS[num+1]);
                 mark =1;
                 num++;
             }
             else if(TEMPS[num+1] != 0 ){
                 real = mark * (TEMPS[num]-48);
                 fprintf(stderr, "real : %d\n",real);
-                fprintf(stderr, "¾Æ½ºÅ° : %d\n",TEMPS[num]);
+                fprintf(stderr, "ì•„ìŠ¤í‚¤ : %d\n",TEMPS[num]);
                 mark=1;
             }
             array[arraynum1] = real;
-            fprintf(stderr, "¹è¿­ : %d\n ¹è¿­ ¼ø¼­ : %d\n",array[arraynum1],arraynum1);
+            fprintf(stderr, "ë°°ì—´ : %d\n ë°°ì—´ ìˆœì„œ : %d\n",array[arraynum1],arraynum1);
             arraynum1++;
             
     //            
@@ -84,3 +84,26 @@ int main()
 
     
 }
+
+/***************Original Code********************************************
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **
+int main()
+{
+    int N; // the number of temperatures to analyse
+    scanf("%d", &N); fgetc(stdin);
+    char TEMPS[256]; // the N temperatures expressed as integers ranging from -273 to 5526
+    fgets(TEMPS,256,stdin); // the N temperatures expressed as integers ranging from -273 to 5526
+
+    // Write an action using printf(). DON'T FORGET THE TRAILING \n
+    // To debug: fprintf(stderr, "Debug messages...\n");
+
+    printf("result\n");
+}
+*************************************************************************/
